@@ -1,0 +1,76 @@
+main
+  display: flex
+  justify-content: center
+
+body
+  height: 100vh
+
+body#background
+  background:
+    image: asset-url("background.jpg")
+    size: cover
+    repeat: no-repeat
+    position: center
+  display: flex
+  justify-content: space-around
+  align-content: space-around
+  font-family: 'Audiowide'
+
+div#logo-links
+    display: flex
+    justify-content: center
+    align-self: center
+    flex-flow: column nowrap
+    background-color: transparentize(#5c5d67, .1)
+    position: relative
+    width: 50%
+    height: 50%
+
+div#logo
+  flex: 3
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: row
+  padding-left: 10px
+
+  h3
+    font-size: 70px
+    color: white
+
+div#links
+  flex: 2
+  display: flex
+  justify-content: space-around
+  align-items: center
+  text-align: center
+  flex-flow: row nowrap
+
+  a
+    color: white
+    font-size: 25px
+
+  div#link1
+    flex: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: transparentize(#DE6E4B, .2)
+    height: 100%
+
+  div#link2
+    flex: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: transparentize(#798086, .2)
+    height: 100%
+
+  div#link3
+    flex: 1
+    flex: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: transparentize(#114B5F, .2)
+    height: 100%
