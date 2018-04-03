@@ -28,8 +28,18 @@ class Admin::CountriesController < Admin::BaseController
       flash[:success] = "Updated country name"
       redirect_to admin_countries_path
     else
-      flash[:failure] = "Failed to update country name"
+      flash[:error] = "Failed to update country name"
       redirect_to edit_admin_country_path(country)
+    end
+  end
+
+  def destroy
+    country = Country.find(params[:id])
+    if country.destroy
+      flash[:success] = "#{country.name} removed from the database"
+      redirect_to admin_countries_path
+    else
+      flash[:error] = "Failed to remove #{country.name} from the database"
     end
   end
 
