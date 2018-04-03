@@ -24,4 +24,22 @@ describe User, type: :model do
       expect(user.admin?).to be_truthy
     end
   end
+
+  describe 'roles' do
+    it 'can be an admin' do
+      admin = User.create!(username: "username", password: "password", email: "email@email.com", role: 1)
+
+      expect(admin.admin?).to be_truthy
+      expect(admin.role).to eq("admin")
+      expect(admin.default?).to_not be_truthy
+    end
+
+    it 'can defaults to default permissions' do
+      admin = User.create!(username: "username", password: "password", email: "email@email.com", role: 0)
+
+      expect(admin.default?).to be_truthy
+      expect(admin.role).to eq("default")
+      expect(admin.admin?).to_not be_truthy
+    end
+  end
 end
