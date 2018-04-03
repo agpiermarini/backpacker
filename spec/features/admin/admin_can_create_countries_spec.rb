@@ -14,6 +14,7 @@ describe 'User' do
       click_on 'Create Country'
 
       expect(current_path).to eq(admin_countries_path)
+      expect(page).to have_content("Added United States of America to the countries database")
       expect(page).to have_content("United States of America")
     end
   end
