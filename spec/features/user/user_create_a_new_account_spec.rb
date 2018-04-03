@@ -7,19 +7,44 @@ describe 'User' do
 
       click_link "Register"
 
-      user = "new"
+      expect(current_path).to eq(new_user_path)
+
+      username = "new"
       password = "password"
       email = "email@email.com"
 
-      fill_in "user[:username]", with: user
-      fill_in "user[:password]", with: password
-      fill_in "user[:password_confirmation]", with: password
-      fill_in "user[:email]", with: email
-      click_on "Submit"
+      fill_in "user[username]", with: username
+      fill_in "user[password]", with: password
+      fill_in "user[password_confirmation]", with: password
+      fill_in "user[email]", with: email
+      click_on "Create Account"
 
-      expect(User.last.username).to eq(user)
-      expect(User.last.password).to eq(password)
-      expect(User.last.email).to eq(email)
+      expect(current_path).to eq(user_path(User.last.id))
+      expect(page).to have_content("Account Created")
+      expect(page).to have_content("Welcome, #{username}!")
+    end
+  end
+
+  describe 'completes a signup form with mismatching passwords' do
+    it 'does not create an account' do
+      visit '/'
+
+      click_link "Register"
+
+      expect(current_path).to eq(new_user_path)
+
+      username = "new"
+      password = "password"
+      email = "email@email.com"
+
+      fill_in "user[username]", with: username
+      fill_in "user[password]", with: password
+      fill_in "user[password_confirmation]", with: "12345"
+      fill_in "user[email]", with: email
+      click_on "Create Account"
+
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content("Account Creation Failed: Passwords must match")
     end
   end
 end
