@@ -4,5 +4,5 @@ class User < ApplicationRecord
   has_secure_password
   # validates :password_digest, confirmation: { case_sensitive: true }
 
-  enum role: ["default", "admin"]
+  enum role: [ :default, :admin ]
 end
