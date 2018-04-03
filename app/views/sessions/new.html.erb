@@ -1,11 +1,15 @@
 <section class="header-section">
   <div class="header-title">
     <h6>
-      Create a New Account
+      Sign In
     <h6>
   </div>
 </section>
 
 <main>
   <%= render partial: "form" %>
-<main>  
+</main>
+
+<div class="visitor-tip">
+  <p>New to Backpacker? <%= link_to 'Create and Account Here', new_user_path %><p>
+</div>
