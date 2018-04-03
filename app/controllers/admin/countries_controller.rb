@@ -15,6 +15,22 @@ class Admin::CountriesController < Admin::BaseController
   end
 
   def index
+    @countries = Country.all
+  end
+
+  def edit
+    @country = Country.find(params[:id])
+  end
+
+  def update
+    country = Country.find(params[:id])
+    if country.update(country_params)
+      flash[:success] = "Updated country name"
+      redirect_to admin_countries_path
+    else
+      flash[:failure] = "Failed to update country name"
+      redirect_to edit_admin_country_path(country)
+    end
   end
 
   private
