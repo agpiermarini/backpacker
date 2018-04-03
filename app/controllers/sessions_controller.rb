@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    session[:user_id] = nil
   end
 
   def create
@@ -11,5 +12,10 @@ class SessionsController < ApplicationController
       flash[:failure] = "Incorrect username and/or password"
       redirect_to login_path
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to login_path
   end
 end
