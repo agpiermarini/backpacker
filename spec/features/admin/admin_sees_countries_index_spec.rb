@@ -5,14 +5,6 @@ describe 'User' do
     context 'with administrative privileges' do
       it 'and sees all countries' do
         admin = User.create!(username: "username", password: "password", email: "email@email.com", role: 1)
-        #
-        # visit '/'
-        #
-        # click_on "Sign In"
-        #
-        # fill_in 'username', with: admin.username
-        # fill_in 'password', with: admin.password
-        # click_on "Sign In"
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
