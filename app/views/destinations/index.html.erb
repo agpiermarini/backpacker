@@ -9,8 +9,8 @@
 <div class="cards">
     <% @destinations.each do |destination| %>
       <div class="card destination-<%= destination.id %>">
-        <img src="default_destination.jpg" alt="default destination image">
-        <h1><%= destination.title %></h1>
+        <img src="images/default_destination.jpg" alt="default destination image">
+        <h1><%= link_to destination.title, destination_path(destination) %></h1>
         <h1><%= destination.country.name %></h1>
       </div>
     <% end %>
