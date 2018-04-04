@@ -40,6 +40,17 @@ class DestinationsController < ApplicationController
     end
   end
 
+  def destroy
+    destination = Destination.find(params[:id])
+    if destination.destroy
+      flash[:success] = "Removed #{destination.title} from my destinations"
+      redirect_to destinations_path
+    else
+      flash[:error] = "Failed to remove #{destination.title} from my destinations"
+      redirect_to destination_path(destination)
+    end
+  end
+
   private
     def destination_params
       params.require(:destination).permit(:title, :notes, :country_id)
