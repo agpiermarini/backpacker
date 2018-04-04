@@ -8,13 +8,13 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   def create
-    image = Image.new(image_params)
-    if image.save
+    @image = Image.new(image_params)
+    if @image.save
       flash[:success] = "Added image to the database"
       redirect_to admin_images_path
     else
       flash[:error] = "Failed to add image to the database"
-      redirect_to new_admin_image_path
+      render :new
     end
   end
 

@@ -11,8 +11,8 @@ class UsersController < ApplicationController
       flash[:success] = "Account Created"
       redirect_to user_path(@user)
     else
-      flash[:failure] = "Account Creation Failed: Passwords must match"
-      redirect_to new_user_path
+      flash[:failure] = "Account Creation Failed"
+      render :new
     end
   end
 

@@ -8,13 +8,13 @@ class Admin::CountriesController < Admin::BaseController
   end
 
   def create
-    country = Country.new(country_params)
-    if country.save
-      flash[:success] = "Added #{country.name} to the countries database"
+    @country = Country.new(country_params)
+    if @country.save
+      flash[:success] = "Added #{@country.name} to the countries database"
       redirect_to admin_countries_path
     else
-      flash[:error] = "Failed to add #{country.name} to the countries database"
-      redirect_to new_admin_country_path
+      flash[:error] = "Failed to add #{@country.name} to the countries database"
+      render :new
     end
   end
 

@@ -16,7 +16,7 @@ class DestinationsController < ApplicationController
       redirect_to destinations_path
     else
       flash[:error] = "Failed to add #{destination.title} to your destinations"
-      redirect_to new_destination_path
+      render :new
     end
   end
 
