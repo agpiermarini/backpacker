@@ -1,0 +1,24 @@
+<section class="header-section">
+  <div class="header-title">
+    <h6>
+      Add An Image to <%= @destination.title %>
+    <h6>
+  </div>
+</section>
+
+  <div class="cards">
+      <% @images.each do |image| %>
+        <div class="card image-<%= image.id %>">
+          <img src="<%= image.url %>" alt="<%= image.name %>">
+          <h1><%= image.name %></h1>
+          <div class="add-image">
+            <%= link_to '<i class="far fa-plus-square"></i>'.html_safe, destination_images_path(image_id: image.id), method: :post %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+
+DestinationImage.create(destin)
+
+destion =
+destination.images < image

@@ -22,6 +22,7 @@ class DestinationsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
+    @images = @destination.images
   end
 
   def edit

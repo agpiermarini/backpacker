@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :images, only: [:new, :create, :index, :edit, :update, :destroy]
   end
 
-  resources :destinations
+  resources :destinations do
+    resources :images, only: [:new, :create, :index]
+  end
 end

@@ -15,3 +15,14 @@
   <h5>Country: </h5><h6><%= @destination.country.name %></h6>
   <h5>Notes: </h5><h6><%= @destination.notes %></h6>
 </div>
+
+<%= link_to '<i class="far fa-plus-square"></i> Add Images', destination_images_path(@destination) %>
+
+<div class="cards">
+    <% @images.each do |image| %>
+      <div class="card image-<%= image.id %>">
+        <img src="<%= image.url %>" alt="<%= image.name %>">
+        <h1><%= image.name %></h1>
+      </div>
+    <% end %>
+</div>
