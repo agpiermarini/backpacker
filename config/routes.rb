@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :countries, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :images, only: [:new, :create, :index, :edit, :update, :destroy]
   end
+
+  resources :destinations
 end

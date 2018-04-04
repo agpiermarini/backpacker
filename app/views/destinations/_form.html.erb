@@ -1,0 +1,14 @@
+<%= form_for @destination do |f| %>
+  <%= f.label :title  %>
+  <%= f.text_field :title %>
+
+  <%= f.collection_select(:country_id, @countries, :id, :name, {prompt: "Select a Country"}, {required: true, class: 'country-select'})  %>
+
+  <%= f.label :notes  %>
+  <%= f.text_area :notes %>
+
+  <div class="cancel-submit">
+    <%= link_to "Cancel", root_path, class: 'btn btn-outline-light' %>
+    <%= f.submit 'Create Destination', class: 'btn btn-outline-light' %>
+  </div>
+<% end %>
