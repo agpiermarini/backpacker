@@ -20,6 +20,26 @@ class DestinationsController < ApplicationController
     end
   end
 
+  def show
+    @destination = Destination.find(params[:id])
+  end
+
+  def edit
+    @destination = Destination.find(params[:id])
+    @countries = Country.all
+  end
+
+  def update
+    destination = Destination.find(params[:id])
+    if destination.update(destination_params)
+      flash[:success] = "Updated #{destination.title}"
+      redirect_to destinations_path
+    else
+      flash[:error] = "Failed to update #{destination.title}"
+      redirect_to edit_destination_path(destination)
+    end
+  end
+
   private
     def destination_params
       params.require(:destination).permit(:title, :notes, :country_id)
