@@ -1,4 +1,8 @@
 class Admin::CountriesController < Admin::BaseController
+  def index
+    @countries = Country.all
+  end
+
   def new
     @country = Country.new
   end
@@ -12,10 +16,6 @@ class Admin::CountriesController < Admin::BaseController
       flash[:error] = "Failed to add #{country.name} to the countries database"
       redirect_to new_admin_country_path
     end
-  end
-
-  def index
-    @countries = Country.all
   end
 
   def edit
@@ -37,10 +37,10 @@ class Admin::CountriesController < Admin::BaseController
     country = Country.find(params[:id])
     if country.destroy
       flash[:success] = "#{country.name} removed from the database"
-      redirect_to admin_countries_path
     else
       flash[:error] = "Failed to remove #{country.name} from the database"
     end
+    redirect_to admin_countries_path
   end
 
   private
