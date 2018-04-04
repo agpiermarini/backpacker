@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :destinations do
-    resources :images, only: [:new, :create, :index]
+    resources :images, only: [:new, :create, :index, :destroy]
   end
 end

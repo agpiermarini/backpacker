@@ -1,10 +1,12 @@
 <section class="header-section">
   <div class="header-title">
     <h6>
-      Add An Image to <%= @destination.title %>
+      Add an Image to <%= @destination.title %>
     <h6>
   </div>
 </section>
+
+  <%= link_to "Go Back to #{@destination.title}", destination_path(@destination) %>
 
   <div class="cards">
       <% @images.each do |image| %>
@@ -17,8 +19,3 @@
         </div>
       <% end %>
   </div>
-
-DestinationImage.create(destin)
-
-destion =
-destination.images < image
