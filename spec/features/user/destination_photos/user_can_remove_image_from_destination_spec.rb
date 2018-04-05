@@ -12,7 +12,7 @@ describe 'User' do
       visit destination_path(destination)
 
       within(".image-#{destination_image.id}") do
-        find(:xpath, ".//a[i[contains(@class, 'far fa-trash-alt')]]").click
+        find(:xpath, ".//a[i[contains(@class, 'fas fa-minus-circle')]]").click
       end
 
       expect(page).to have_content("Removed image \"#{image.name}\" from this destination")

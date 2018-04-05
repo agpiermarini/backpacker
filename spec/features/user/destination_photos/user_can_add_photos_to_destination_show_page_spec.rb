@@ -14,7 +14,7 @@ describe 'User' do
       visit destination_images_path(destination)
 
       within(".image-#{image.id}") do
-        find(:xpath, ".//a[i[contains(@class, 'far fa-plus-square')]]").click
+        find(:xpath, ".//a[i[contains(@class, 'fas fa-plus-circle')]]").click
       end
 
       expect(current_path).to eq(destination_images_path(destination))
