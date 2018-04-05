@@ -18,7 +18,7 @@ main
 
 body
   height: 100vh
-  background-color: #DDDDDD
+  background-color: transparentize(#DDDDDD, .4)
 
 body#background
   background:
@@ -143,6 +143,7 @@ form
     margin-top: 20px
     margin-left: 75px
     margin-right: 75px
+    background-color: transparent
 
   .card img
     position: relative
@@ -159,13 +160,15 @@ form
     border-bottom: 1px solid black
     border-radius: 0px 0px 5px 5px
     padding: 10px
+    margin-bottom: 0
 
   .card-buttons
     display: flex
     justify-content: center
     flex-flow: row nowrap
     font-size: 18px
-    margin-bottom: 15px
+    margin-bottom: 20px
+    margin-top: 10px
 
     a
       margin-left: 25px
@@ -207,13 +210,13 @@ section.header-section
       color: white
       padding: 0px 50px 0px 50px
 
+
   .header-links
     display: flex
     align-items: space-between
     justify-content: space-around
     align-items: center
     flex-flow: row nowrap
-    background-color: transparentize(#AAAAAA, .3)
     margin-bottom: 10px
     width: auto
 
@@ -221,6 +224,7 @@ section.header-section
       font-size: 25px
       color: white
       padding: 0px 50px 0px 50px
+      background-color: transparentize(#AAAAAA, .3)
 
 
 .destination-container
@@ -235,9 +239,11 @@ section.header-section
     flex-flow: column nowrap
     background-color: lightgrey
     max-width: 600px
+    min-width: 500px
     margin: 35px 20px 20px 20px
     padding: 20px
     border-radius: 10px
+    border: .5px solid black
 
     h5
       font-size: 18px
@@ -256,7 +262,7 @@ section.header-section
       padding: 20px 10px 10px 10px
 
       a
-        font-size: 18px
+        font-size: 15px
 
 .table
   display: flex
