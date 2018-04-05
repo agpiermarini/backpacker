@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark">
-  <a class="navbar-brand" href="/">BACKPACKER</a>
+  <%= link_to "BACKPACKER", user_path(current_user), class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,15 +11,13 @@
           Administrator
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Users", root_path, class: "dropdown-item" %>
+          <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Users", admin_users_path, class: "dropdown-item" %>
           <%= link_to "Countries", admin_countries_path, class: "dropdown-item" %>
           <%= link_to "Images", admin_images_path, class: "dropdown-item" %>
           <%= link_to "Sign Out", logout_path, class: "dropdown-item" %>
         </div>
       </li>
-      <!-- <li class="nav-item active">
-        <a class='nav-link' href="/dashboard">TEST <span class="sr-only">(current)</span></a>
-      </li> -->
     </ul>
   </div>
 </nav>
