@@ -1,0 +1,35 @@
+<section class="header-section">
+  <div class="header-title">
+    <h6>
+      All Users
+    <h6>
+  </div>
+</section>
+
+<div class="table table-hover">
+  <table>
+    <thead class="table-collection">
+      <tr class="table-header">
+        <th>Username</th>
+        <th>Email Address</th>
+        <th>Permissions</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-collection">
+      <% @users.each do |user| %>
+        <tr class="table-item user-<%= user.id %>">
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td>
+          <div class="card-buttons">
+              <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_admin_user_path(user) %>
+              <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, admin_user_path(user), method: :delete, data: { confirm: "You are about to delete this user."} %>
+          <div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<div>

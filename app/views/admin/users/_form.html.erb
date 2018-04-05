@@ -1,0 +1,19 @@
+<%= form_for [:admin, @user] do |f| %>
+  <%= f.label :username  %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email  %>
+  <%= f.email_field :email %>
+
+  <%= f.label :role  %>
+
+  <select name="user[role]">
+     <option value="default">default</option>
+     <option value="admin">admin</option>
+  </select>
+
+  <div class="cancel-submit">
+    <%= link_to "Cancel", :back, class: 'btn btn-outline-light' %>
+    <%= f.submit class: 'btn btn-outline-light' %>
+  </div>
+<% end %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :countries, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :images, only: [:new, :create, :index, :edit, :update, :destroy]
+    resources :users, only: [:index, :edit, :update, :destroy]
   end
 
   resources :destinations do
