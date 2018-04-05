@@ -3,25 +3,21 @@
     <h6>
       All Images
     <h6>
-  </div>
-  <div class="header-links">
-    <%= link_to '<i class="far fa-plus-square"></i> Add New Image'.html_safe, new_admin_image_path  %>
+    <div class="header-links">
+      <%= link_to '<i class="far fa-plus-square"></i> Add New Image'.html_safe, new_admin_image_path  %>
+    </div>
   </div>
 </section>
 
   <div class="cards">
-    <ul>
       <% @images.each do |image| %>
         <div class="card image-<%= image.id %>">
-          <li class="image" >
-            <img src="<%= image.url %>" alt="<%= image.name %>">
-            <h1><%= image.name %></h1>
-          </li>
-          <div class="edit-delete">
+          <img src="<%= image.url %>" alt="<%= image.name %>">
+          <h1><%= image.name %></h1>
+          <div class="card-buttons">
             <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_admin_image_path(image) %>
             <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, admin_image_path(image), method: :delete, data: { confirm: "You are about to delete this country."} %>
-          <div>
+          </div>
         </div>
       <% end %>
-    </ul>
   </div>

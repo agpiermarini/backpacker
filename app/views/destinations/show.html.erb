@@ -1,0 +1,35 @@
+<section class="header-section">
+  <div class="header-title">
+    <h6>
+      <%= @destination.title  %>
+    <h6>
+      <div class="header-buttons">
+
+      </div>
+  </div>
+</section>
+
+  <div class="destination-container">
+    <div class="destination-info">
+      <h5>Title: </h5><h6><%= @destination.title %></h6>
+      <h5>Country: </h5><h6><%= @destination.country.name %></h6>
+      <h5>Notes: </h5><h6><%= @destination.notes %></h6>
+      <div class="destination-buttons">
+        <%= link_to '<i class="fas fa-edit"></i> Edit Destination'.html_safe, edit_destination_path(@destination) %>
+        <%= link_to '<i class="fas fa-trash-alt"></i> Delete Destination'.html_safe, destination_path(@destination), method: :delete, data: { confirm: "You are about to delete this destination."} %>
+        <%= link_to '<i class="fas fa-plus-circle"></i> Add Images'.html_safe, destination_images_path(@destination) %>
+      </div>
+    </div>
+
+    <div class="cards">
+        <% @images.each do |image| %>
+          <div class="card image-<%= image.id %>">
+            <img src="<%= image.url %>" alt="<%= image.name %>">
+            <h1><%= image.name %></h1>
+            <div class="card-buttons">
+              <%= link_to '<i class="fas fa-minus-circle"></i> Remove Image'.html_safe, destination_image_path(destination_id: @destination.id, image_id: image.id), method: :delete %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>

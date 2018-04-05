@@ -43,8 +43,8 @@ describe 'User' do
       fill_in "user[email]", with: email
       click_on "Create Account"
 
-      expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("Account Creation Failed: Passwords must match")
+      expect(current_path).to eq(users_path)
+      expect(page).to have_content("Account Creation Failed")
     end
   end
 end

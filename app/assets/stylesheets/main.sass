@@ -87,7 +87,7 @@ div#links
 
 form
   .form-group
-  margin-top: 2%
+  margin-top: 50px
   background-color: transparentize(black, .6)
   padding: 15px
   width: 40%
@@ -102,12 +102,136 @@ form
   label
     font-weight: bold
 
-  .category-select
+  .country-select
     display: flex
     flex-direction: row
-    margin-top: 13px
 
   .cancel-submit
-    margin-top: 3%
+    margin-top: 40px
     display: flex
     justify-content: space-around
+
+
+.cards
+  margin: 0px 20px 20px 20px
+  display: flex
+  justify-content: center
+  flex-flow: row wrap
+
+  .card
+    border: none
+    overflow: hidden
+    margin-top: 20px
+    margin-left: 75px
+    margin-right: 75px
+
+  .card img
+    position: relative
+    border: 1px solid black
+    height: 250px
+    width:  250px
+
+  .card h1
+    text-align: center
+    font-size: 20px
+    background-color: lightgrey
+    border-right: 1px solid black
+    border-left: 1px solid black
+    border-bottom: 1px solid black
+    border-radius: 0px 0px 5px 5px
+    padding: 10px
+
+  .card-buttons
+    display: flex
+    justify-content: center
+    flex-flow: row nowrap
+    font-size: 18px
+    margin-bottom: 15px
+
+    a
+      margin-left: 25px
+      margin-right: 25px
+
+section.header-section
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-image: url("banner.jpg")
+    // background-color: transparentize(#819595, .1)
+  background-position: center center
+  background-size: cover
+  height:  150px
+  box-shadow: 1px 1.5px 1px 1px #5c5d67
+
+  .header-title
+    padding: 10px
+    background-color: transparentize(#819595, .4)
+    border-radius: 5%
+
+    h6
+      font-size: 60px
+      color: white
+      text-align: center
+    a
+      color: white
+
+  .header-buttons
+    display: flex
+    align-items: space-between
+    justify-content: space-around
+    align-items: center
+    flex-flow: row nowrap
+
+    a
+      font-size: 40px
+      color: white
+      padding: 0px 50px 0px 50px
+
+  .header-links
+    display: flex
+    align-items: space-between
+    justify-content: space-around
+    align-items: center
+    flex-flow: row nowrap
+
+    a
+      font-size: 25px
+      color: white
+      padding: 0px 50px 0px 50px
+
+
+.destination-container
+  display: flex
+  justify-content: center
+  align-content: center
+  flex-flow: column nowrap
+
+  .destination-info
+    display: flex
+    align-self: center
+    flex-flow: column nowrap
+    background-color: lightgrey
+    max-width: 600px
+    margin: 35px 20px 20px 20px
+    padding: 20px
+    border-radius: 10px
+
+    h5
+      font-size: 18px
+      margin-bottom: 0px
+      font-weight: bold
+
+    h6
+      font-size: 18px
+      margin-bottom: 20px
+      font-weight: normal
+
+    .destination-buttons
+      display: flex
+      justify-content: space-between
+      align-content: flex-end
+      padding: 20px 10px 10px 10px
+
+      a
+        font-size: 18px
