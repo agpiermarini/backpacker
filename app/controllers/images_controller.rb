@@ -21,10 +21,11 @@ class ImagesController < ApplicationController
     @images = @destination.images
     destination_image = DestinationImage.find_by(destination_id: params[:destination_id], image_id: params[:image_id])
     if destination_image.destroy
-      flash.now[:success] = "Removed image \"#{destination_image.image.name}\" from this destination"
+      flash[:success] = "Removed image \"#{destination_image.image.name}\" from this destination"
+      redirect_to destination_path(@destination)
     else
       flash.now[:error] = "Removed image \"#{destination_image.image.name}\" from this destination"
+      render "destinations/show"
     end
-    render "destinations/show"
   end
 end

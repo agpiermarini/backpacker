@@ -3,8 +3,10 @@
     <h6>
       Welcome, <%= @user.username %>!
     <h6>
-    <div class="header-links">
-      <%= link_to '<i class="far fa-plus-square"></i> Add a Destination'.html_safe, new_destination_path  %>
-    </div>
+    <% if current_user.default? %>
+      <div class="header-links">
+        <%= link_to '<i class="far fa-plus-square"></i> Add a Destination'.html_safe, new_destination_path  %>
+      </div>
+    <% end %>  
   </div>
 </section>
