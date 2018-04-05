@@ -11,15 +11,12 @@
           Administrator
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Users", root_path, class: "dropdown-item" %>
+          <%= link_to "Users", admin_users_path, class: "dropdown-item" %>
           <%= link_to "Countries", admin_countries_path, class: "dropdown-item" %>
           <%= link_to "Images", admin_images_path, class: "dropdown-item" %>
           <%= link_to "Sign Out", logout_path, class: "dropdown-item" %>
         </div>
       </li>
-      <!-- <li class="nav-item active">
-        <a class='nav-link' href="/dashboard">TEST <span class="sr-only">(current)</span></a>
-      </li> -->
     </ul>
   </div>
 </nav>

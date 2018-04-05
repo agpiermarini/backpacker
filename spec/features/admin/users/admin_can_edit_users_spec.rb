@@ -21,7 +21,6 @@ describe 'User' do
       fill_in 'user[username]', with: new_username
       fill_in 'user[email]', with: new_email
       select "#{new_role}", from: 'user[role]'
-      save_and_open_page
       click_on 'Update User'
 
       expect(current_path).to eq(admin_users_path)
