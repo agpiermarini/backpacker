@@ -1,9 +1,9 @@
-<%= form_for [:admin, @country] do |f| %>
-  <%= f.label :name  %>
-  <%= f.text_field :name %>
+  <%= form_for [:admin, @country] do |f| %>
+    <%= f.label :name  %>
+    <%= f.text_field :name %>
 
-  <div class="cancel-submit">
-    <%= link_to "Cancel", admin_countries_path, class: 'btn btn-outline-light' %>
-    <%= f.submit class: 'btn btn-outline-light' %>
-  </div>
-<% end %>
+    <div class="cancel-submit">
+      <%= link_to "Cancel", admin_countries_path, class: 'btn btn-outline-light' %>
+      <%= f.submit class: 'btn btn-outline-light' %>
+    </div>
+  <% end %>

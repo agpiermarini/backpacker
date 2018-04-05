@@ -1,6 +1,10 @@
 nav.navbar
-  background-color: transparentize(#5c5d67, .05)
+  background-color: #AAAAAA
   font-family: 'Audiowide'
+  border-bottom: 1px black
+  height: 40px
+
+
 
 main
   display: flex
@@ -14,6 +18,7 @@ main
 
 body
   height: 100vh
+  background-color: #EEEEEE
 
 body#background
   background:
@@ -35,6 +40,7 @@ div#logo-links
     position: relative
     width: auto
     height: 30%
+    border-radius: 10px
 
 div#logo
   flex: 3
@@ -67,6 +73,7 @@ div#links
     align-items: center
     background-color: transparentize(#DE6E4B, .2)
     height: 100%
+    border-radius: 0px 0px 0px 10px
 
   div#link2
     flex: 1
@@ -84,16 +91,18 @@ div#links
     align-items: center
     background-color: transparentize(#114B5F, .2)
     height: 100%
+    border-radius: 0px 0px 10px 0px
 
 form
   .form-group
   margin-top: 50px
-  background-color: transparentize(black, .6)
+  background-color: transparentize(#AAAAAA, .0)
   padding: 15px
   width: 40%
   display: flex
   flex-direction: column
   justify-content: space-around
+  border-radius: 10px
 
   input, select
     .form-control
@@ -111,6 +120,12 @@ form
     display: flex
     justify-content: space-around
 
+    a
+      height: 40px
+      background-color: transparentize(#798086, .2)
+
+    .btn-outline-light
+      background-color: transparentize(#798086, .2)
 
 .cards
   margin: 0px 20px 20px 20px
@@ -157,7 +172,7 @@ section.header-section
   flex-direction: column
   justify-content: center
   align-items: center
-  background-image: url("banner.jpg")
+  background-image: asset-url("banner.jpg")
     // background-color: transparentize(#819595, .1)
   background-position: center center
   background-size: cover
@@ -165,9 +180,9 @@ section.header-section
   box-shadow: 1px 1.5px 1px 1px #5c5d67
 
   .header-title
-    padding: 10px
-    background-color: transparentize(#819595, .4)
-    border-radius: 5%
+    background-color: transparentize(#AAAAAA, .4)
+    width: 100%
+    margin-top: 10px
 
     h6
       font-size: 60px
@@ -194,6 +209,10 @@ section.header-section
     justify-content: space-around
     align-items: center
     flex-flow: row nowrap
+    background-color: transparentize(#AAAAAA, .5)
+    margin-top: 10px
+    margin-bottom: 10px
+    width: auto
 
     a
       font-size: 25px
@@ -235,3 +254,12 @@ section.header-section
 
       a
         font-size: 18px
+
+.table
+  display: flex
+  justify-content: center
+  margin-top: 40px
+
+.visitor-tip
+  display: flex
+  justify-content: center
